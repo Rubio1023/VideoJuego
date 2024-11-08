@@ -16,7 +16,7 @@ public class Espada implements Armas
     {
         this.MP = MPInicial;
         this.ataques = new ArrayList<>();
-        this.ataques.add(new FiloCortonte());  // Añadimos ataques específicos para el bastón
+        this.ataques.add(new FiloCortante());  // Añadimos ataques específicos para la espada
         this.ataques.add(new AtaqueDoble());
         this.ataques.add(new AtaqueDelBerserker());
     }
@@ -25,23 +25,24 @@ public class Espada implements Armas
     public int realizarAtaque(Ataque ataque) 
     {
         int damage = ataque.calcularDamage();
-        System.out.println("Realizando ataque: " + ataque.getClass().getSimpleName() + " con daño: " + damage);
+        System.out.println("Realizando ataque: " + ataque.getClass().getSimpleName() + " daño realizado :" + damage);
         return damage;
     }
-
+    // Metodo para obtener los ataques disponibles
     @Override
     public List<Ataque> getAtaques() 
     {
-        return ataques;  // Retorna la lista de ataques disponibles para el bastón
+        return ataques;
     }
-
-    public int getMP() {
+    // Metodo para obtener la cantidad de MP
+    public int getMP() 
+    {
         return MP;
     }
-
+    // Metodo para recargar MP
     public void recargarMP(int cantidad) 
     {
         MP += cantidad;
-        System.out.println("MP recargados: " + cantidad + ". MP actual: " + MP);
+        System.out.println("MP recargados :" + cantidad + ". MP actual :" + MP);
     }
 }

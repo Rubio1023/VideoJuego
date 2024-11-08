@@ -25,7 +25,7 @@ public class Baston implements Armas
     public int realizarAtaque(Ataque ataque) 
     {
         int damage = ataque.calcularDamage();
-        System.out.println("Realizando ataque :" + ataque.getClass().getSimpleName() + " con daño :" + damage);
+        System.out.println("Realizando ataque :" + ataque.getClass().getSimpleName() + " daño realizado :" + damage);
         return damage;
     }
     // Metodo para obtener los ataques disponibles

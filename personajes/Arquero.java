@@ -11,10 +11,10 @@ public class Arquero
         this.arma = arma;
     }
     // Método para realizar un ataque
-    public void realizarAtaque() 
+    public void realizarAtaque(int indiceAtaque) 
     {
-        // arquero selecciona el primer ataque
-        Ataque ataque = arma.getAtaques().get(0);  // Obtenemos el primer ataque de la lista
-        arma.realizarAtaque(ataque);  // Realizamos el ataque
+        Ataque ataque = arma.getAtaques().get(indiceAtaque);  // Selecciona el ataque según el índice
+        arma.realizarAtaque(ataque);  // Realiza el ataque
     }
+    
 }

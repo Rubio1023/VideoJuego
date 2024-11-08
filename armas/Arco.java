@@ -15,7 +15,7 @@ public class Arco implements Armas
     {
         this.MP = MPInicial;
         this.ataques = new ArrayList<>();
-        this.ataques.add(new FlechaRapida());
+        this.ataques.add(new FlechaRapida()); // Añadimos ataques específicos para el arco
         this.ataques.add(new FlechaDeFuego());
         this.ataques.add(new FlechaOscura());
     }
@@ -24,7 +24,7 @@ public class Arco implements Armas
     public int realizarAtaque(Ataque ataque) 
     {
         int damage = ataque.calcularDamage();
-        System.out.println("Realizando ataque: " + ataque.getClass().getSimpleName() + " con daño: " + damage);
+        System.out.println("Realizando ataque :" + ataque.getClass().getSimpleName() + " daño realizado :" + damage);
         return damage;
     }
     // Método para obtener los ataques
@@ -42,6 +42,6 @@ public class Arco implements Armas
     public void recargarMP(int cantidad) 
     {
         MP += cantidad;
-        System.out.println("MP recargados: " + cantidad + ". MP actual: " + MP);
+        System.out.println("MP recargados :" + cantidad + ". MP actual :" + MP);
     }
 }
