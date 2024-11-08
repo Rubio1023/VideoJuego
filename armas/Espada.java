@@ -1,8 +1,9 @@
 package armas;
 
 import ataques.Ataque;
-import ataques.baston.AtaqueMagico;
-import ataques.baston.AtaqueFisico;
+import ataques.espada.FiloCortante;
+import ataques.espada.AtaqueDoble;
+import ataques.espada.AtaqueDelBerserker;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,8 +16,9 @@ public class Espada implements Armas
     {
         this.MP = MPInicial;
         this.ataques = new ArrayList<>();
-        this.ataques.add(new AtaqueMagico());  // Añadimos ataques específicos para el bastón
-        this.ataques.add(new AtaqueFisico());
+        this.ataques.add(new FiloCortonte());  // Añadimos ataques específicos para el bastón
+        this.ataques.add(new AtaqueDoble());
+        this.ataques.add(new AtaqueDelBerserker());
     }
 
     @Override

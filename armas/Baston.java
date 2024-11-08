@@ -1,8 +1,9 @@
 package armas;
 
 import ataques.Ataque;
-import ataques.baston.AtaqueMagico;
-import ataques.baston.AtaqueFisico;
+import ataques.baston.HechizoBasico;
+import ataques.baston.HechizoElemental;
+import ataques.baston.HechizoArcano;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,8 +16,9 @@ public class Baston implements Armas
     {
         this.MP = MPInicial;
         this.ataques = new ArrayList<>();
-        this.ataques.add(new AtaqueMagico());  // Añadimos ataques específicos para el bastón
-        this.ataques.add(new AtaqueFisico());
+        this.ataques.add(new HechizoBasico());  // Añadimos ataques específicos para el bastón
+        this.ataques.add(new HechizoElemental());
+        this.ataques.add(new HechizoArcano());
     }
 
     @Override

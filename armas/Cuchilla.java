@@ -1,8 +1,9 @@
 package armas;
 
 import ataques.Ataque;
-import ataques.baston.AtaqueMagico;
-import ataques.baston.AtaqueFisico;
+import ataques.cuchillo.AtaqueSigiloso;
+import ataques.cuchillo.AtaqueFurtivo;
+import ataques.cuchillo.AtaqueVenenoso;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,8 +14,9 @@ public class Cuchilla implements Armas {
     public Cuchilla(int MPInicial) {
         this.MP = MPInicial;
         this.ataques = new ArrayList<>();
-        this.ataques.add(new AtaqueMagico());  // Añadimos ataques específicos para el bastón
-        this.ataques.add(new AtaqueFisico());
+        this.ataques.add(new AtaqueSigiloso());  // Añadimos ataques específicos para el bastón
+        this.ataques.add(new AtaqueFurtivo());
+        this.ataques.add(new AtaqueVenenoso());
     }
 
     @Override
