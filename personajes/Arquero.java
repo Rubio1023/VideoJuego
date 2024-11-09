@@ -3,7 +3,7 @@ import java.util.List;
 import armas.Armas;
 import ataques.Ataque;
 // Clase Arquero que hereda de Personajes
-public class Arquero extends Personajes 
+class Arquero extends Personajes 
 {
     private Armas arma;
     
