@@ -39,10 +39,23 @@ public class Baston implements Armas
     {
         return MP;
     }
-    // Metodo para recargar MP
-    public void recargarMP(int cantidad) 
-    {
-        MP += cantidad;
-        System.out.println("MP recargados :" + cantidad + ". MP actual :" + MP);
-    }
+     // Método para recargar MP
+     public void recargarMP(int cantidad) 
+     {
+         MP += cantidad;
+         System.out.println("MP recargados :" + cantidad + ". MP actual :" + MP);
+     }
+     // Método para reducir MP
+     public int reducirMP(int cantidad) 
+     {
+         MP -= cantidad;
+         System.out.println("MP reducidos :" + cantidad + ". MP actual :" + MP);
+         return MP;
+     }
+     // Método para defenderse
+     @Override
+     public void defender() 
+     {
+         System.out.println("Defensa activada.");
+     }
 }

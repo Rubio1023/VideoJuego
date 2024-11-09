@@ -36,12 +36,17 @@ public abstract class Personajes
         return this.armas;
     }
     // Metodos abstractos
-    public abstract void atacar(Personajes enemigo);
+    public abstract void atacar(Personajes enemigo, int indiceAtaque);
     // Metodo para defenderse
     public void defender() 
     {
         this.defendiendo = true;
         System.out.println(nombre + " se prepara para defender.");
+    }
+    // Metodo para redicir MP
+    public void reducirMP(int cantidad) 
+    {
+        this.MP -= cantidad;
     }
     // Metodo para recibir daño
     public void recibirDamage(int damage) 
