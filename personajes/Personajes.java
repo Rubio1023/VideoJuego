@@ -35,7 +35,7 @@ public abstract class Personajes
     {
         return this.armas;
     }
-    // Metodos abstractos
+    // Metodos abstractos para atacar
     public abstract void atacar(Personajes enemigo, int indiceAtaque);
     // Metodo para defenderse
     public void defender() 

@@ -6,7 +6,6 @@ import ataques.Ataque;
 public class Arquero extends Personajes 
 {
     private Armas arma;
-
     // Constructor
     public Arquero(String nombre, int HP, int MP, Armas arma) 
     {
