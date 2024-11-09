@@ -10,6 +10,7 @@ public class Arco implements Armas
 {
     private int MP;
     private List<Ataque> ataques; // Lista de ataques del arco
+    
     // Constructor
     public Arco(int MPInicial) 
     {
@@ -19,6 +20,7 @@ public class Arco implements Armas
         this.ataques.add(new FlechaDeFuego());
         this.ataques.add(new FlechaOscura());
     }
+    
     // Método para realizar un ataque
     @Override
     public int realizarAtaque(Ataque ataque) 
@@ -27,23 +29,27 @@ public class Arco implements Armas
         System.out.println("Realizando ataque :" + ataque.getClass().getSimpleName() + " daño realizado :" + damage);
         return damage;
     }
+    
     // Método para obtener los ataques
     @Override
     public List<Ataque> getAtaques() 
     {
         return ataques;  
     }
+    
     // Método para obtener la cantidad de MP
     public int getMP() 
     {
         return MP;
     }
+    
     // Método para recargar MP
     public void recargarMP(int cantidad) 
     {
         MP += cantidad;
         System.out.println("MP recargados :" + cantidad + ". MP actual :" + MP);
     }
+    
     // Método para reducir MP
     public int reducirMP(int cantidad) 
     {
@@ -51,6 +57,7 @@ public class Arco implements Armas
         System.out.println("MP reducidos :" + cantidad + ". MP actual :" + MP);
         return MP;
     }
+    
     // Método para defenderse
     @Override
     public void defender() 

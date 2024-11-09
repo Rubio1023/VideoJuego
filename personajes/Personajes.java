@@ -1,7 +1,6 @@
 package personajes;
-
 import armas.Armas;
-
+// Clase abstracta Personajes con los atributos y métodos comunes a todos los personajes
 public abstract class Personajes 
 {
     private String nombre; // Nombre del personaje
@@ -9,6 +8,7 @@ public abstract class Personajes
     private int MP =100; // Puntos de magia
     protected Armas armas;  // Referencia al arma 
     private boolean defendiendo; // Variable para saber si el personaje se está defendiendo
+    
     // Constructor
     public Personajes(String nombre, int HP, int MP, Armas armas) 
     {
@@ -18,6 +18,7 @@ public abstract class Personajes
         this.armas = armas;
         this.defendiendo = false;
     }
+    
     // Metodo para obtener el nombre del personaje, la vida, la magia y el arma
     public String getNombre() 
     {
@@ -35,20 +36,24 @@ public abstract class Personajes
     {
         return this.armas;
     }
-    // Metodos abstractos para atacar
+    
+    // Metodos abstractos para atacar sin implementacion
     public abstract void atacar(Personajes enemigo, int indiceAtaque);
-    // Metodo para defenderse
+    
+    // Metodo para defenderse con implementacion
     public void defender() 
     {
         this.defendiendo = true;
         System.out.println(nombre + " se prepara para defender.");
     }
-    // Metodo para redicir MP
+    
+    // Metodo para redicir MP con implementacion
     public void reducirMP(int cantidad) 
     {
         this.MP -= cantidad;
     }
-    // Metodo para recibir daño
+    
+    // Metodo para recibir daño con implementacion
     public void recibirDamage(int damage) 
     {
         if (!defendiendo) 
@@ -64,7 +69,8 @@ public abstract class Personajes
             defendiendo = false;
         }    
     }
-    // Metodo de validacion, para verificar que este vivo
+    
+    // Metodo de validacion, para verificar que este vivo con implementacion
     public boolean estaVivo() 
     {
         return HP > 0;
