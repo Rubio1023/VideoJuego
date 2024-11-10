@@ -38,11 +38,6 @@ public abstract class Personajes
     {
         return this.armas;
     }
-    // Metodo para seleccionar el arma
-    public void seleccionarArma(armas.Arma arma) 
-    {
-        arma.seleccionarAtaque();  // Llama al método de selección del arma
-    }   
     // Metodos abstractos para atacar sin implementacion
     public abstract void atacar(Personajes objetivo);
     

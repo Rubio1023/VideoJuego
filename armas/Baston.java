@@ -2,37 +2,41 @@
 package armas;
 
 import java.util.Scanner;
-
-import ataques.AtaqueDeBaston;
+import ataques.AtaqueDeBaston.HechizoArcano;
+import ataques.AtaqueDeBaston.HechizoBasico;
+import ataques.AtaqueDeBaston.HechizoElemental;
+import personajes.Personajes;
+import ataques.Ataque;
 
 // Clase Arco que implementa la interfaz Arma
 public class Baston implements Arma 
 {
-    private AtaqueDeBaston ataqueDeBaston = new AtaqueDeBaston();  // Crear una instancia de AtaqueDeArco
+    private Ataque ataque; // Referencia a la interfaz Ataque
     private Scanner scanner = new Scanner(System.in);  // Para leer la opción de ataque
 
     @Override
     public void seleccionarAtaque() 
     {
         // Seleccionar el ataque
-        System.out.println("Selecciona un ataque con el bastón:\n 1: Hechizo Basico\n 2: Hechizo Elemental \n 3: Hechizo Arcano");
+        System.out.println("Selecciona un ataque con el bastón:\n 1: Hechizo Básico\n 2: Hechizo Elemental\n 3: Hechizo Arcano");
         int opcion = scanner.nextInt();
 
-        // Llamar al método correspondiente según la opción seleccionada
+        // Cambiar el ataque basado en la selección
         switch (opcion) 
         {
             case 1:
-                ataqueDeBaston.HechizoBasico();  // Ejecutar Hechizo básico
+                ataque = new HechizoBasico();  // Cambiar a Hechizo Básico
                 break;
             case 2:
-                ataqueDeBaston.HechizoElemental(); // Ejecutar Hechizo elemental
+                ataque = new HechizoElemental(); // Cambiar a Hechizo Elemental
                 break;
             case 3:
-                ataqueDeBaston.HechizoArcano();  // Ejecutar Hechizo arcano
+                ataque = new HechizoArcano();  // Cambiar a Hechizo Arcano
                 break;
             default:
                 System.out.println("Opción no válida.");
-                break;
+                return; // Si no es válida, salir del método
         }
     }
 }
+

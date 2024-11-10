@@ -11,7 +11,7 @@ public class Arquero extends Personajes
     }
     // Método para atacar
     @Override
-    public void atacar(personajes.Personajes objetivo) 
+    public void atacar(Personajes objetivo) 
     {
         System.out.println("El Arquero se esta preparando con su arco milenario.");
         armas.seleccionarAtaque();// Llamar al método de selección de ataque de la clase Arma

@@ -11,7 +11,7 @@ public class Berserker extends Personajes
     }
     // Método para atacar
     @Override
-    public void atacar(personajes.Personajes objetivo) 
+    public void atacar(Personajes objetivo) 
     {
         System.out.println("El Berserker se esta preparando con su espada ensangretada.");
         armas.seleccionarAtaque();// Llamar al método de selección de ataque de la clase Arma
