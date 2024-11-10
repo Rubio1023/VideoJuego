@@ -12,7 +12,7 @@ import ataques.AtaqueDeEspada.AtaqueDelBerserker;
 public class Espada implements Arma 
 {
     private Ataque ataque; // Referencia a la interfaz Ataque
-    private Scanner scanner = new Scanner(System.in);  // Para leer la opción de ataque
+    private Scanner dato = new Scanner(System.in);  // Para leer la opción de ataque
     private boolean ataqueValido = false;  // Para validar la opción de ataque
 
     @Override
@@ -29,7 +29,7 @@ public class Espada implements Arma
             // Solicitar al jugador que seleccione un ataque
             System.out.println("\nSelecciona un ataque con la espada ensangretada:\n 1: Filo Cortante\n 2: Rebanador\n 3: Ataque del Berserker\n");
             System.out.print("Ingresar opcion :");
-            int opcion = scanner.nextInt();
+            int opcion = dato.nextInt();
             // Seleccionar el ataque
             switch (opcion) 
             {

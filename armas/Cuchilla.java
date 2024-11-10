@@ -12,7 +12,7 @@ import ataques.AtaqueDeCuchilla.Envenenamiento;
 public class Cuchilla implements Arma 
 {
     private Ataque ataque; // Referencia a la interfaz Ataque
-    private Scanner scanner = new Scanner(System.in);  // Para leer la opción de ataque
+    private Scanner dato = new Scanner(System.in);  // Para leer la opción de ataque
     private boolean ataqueValido = false;  // Para validar la opción de ataque
 
     @Override
@@ -29,7 +29,7 @@ public class Cuchilla implements Arma
             // Solicitar al jugador que seleccione un ataque
             System.out.println("\nSelecciona un ataque con la cuchilla del asesino:\n 1: Ataque Furtivo\n 2: Ataque Sigiloso\n 3: Envenenamiento\n");
             System.out.print("Ingresar opcion :");
-            int opcion = scanner.nextInt();
+            int opcion = dato.nextInt();
             // Seleccionar el ataque
             switch (opcion) 
             {

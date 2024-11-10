@@ -12,7 +12,7 @@ import ataques.AtaqueDeArco.FlechaOscura;
 public class Arco implements Arma 
 {
     private Ataque ataque; // Referencia a la interfaz Ataque
-    private Scanner scanner = new Scanner(System.in);  // Para leer la opción de ataque
+    private Scanner dato = new Scanner(System.in);  // Para leer la opción de ataque
     private boolean ataqueValido = false;  // Para validar la opción de ataque
     @Override
     public void seleccionarAtaque(Personajes atacante,Personajes objetivo) 
@@ -28,7 +28,7 @@ public class Arco implements Arma
             // Solicitar al jugador que seleccione un ataque
             System.out.println("\nSelecciona un ataque con el arco milenario:\n 1: Flecha Rapida\n 2: Flecha De Fuego\n 3: Flecha Oscura\n");
             System.out.print("Ingresar opcion :");
-            int opcion = scanner.nextInt();
+            int opcion = dato.nextInt();
             // Seleccionar el ataque
             switch (opcion) 
             {
