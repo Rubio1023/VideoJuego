@@ -15,20 +15,20 @@ public class Cuchilla implements Arma
     public void seleccionarAtaque() 
     {
         // Seleccionar el ataque
-        System.out.println("Selecciona un ataque con el arco:\n 1: Flecha Rápida\n 2: Flecha de Fuego \n 3: Flecha Oscura");
+        System.out.println("Selecciona un ataque con el cuchillo: \n 1: Ataque Furtivo \n 2: Ataque Sigiloso \n 3: Envenenamiento");
         int opcion = scanner.nextInt();
 
         // Llamar al método correspondiente según la opción seleccionada
         switch (opcion) 
         {
             case 1:
-                ataqueDeCuchilla.AtaqueFurtivo();  // Ejecutar disparo rápido
+                ataqueDeCuchilla.AtaqueFurtivo();  // Ejecutar Ataque furtivo
                 break;
             case 2:
-                ataqueDeCuchilla.AtaqueSigiloso();  // Ejecutar disparo explosivo
+                ataqueDeCuchilla.AtaqueSigiloso();  // Ejecutar Ataque sigiloso
                 break;
             case 3:
-                ataqueDeCuchilla.Envenenamiento();  // Ejecutar disparo oscuro
+                ataqueDeCuchilla.Envenenamiento();  // Ejecutar Envenenamiento
                 break;
             default:
                 System.out.println("Opción no válida.");

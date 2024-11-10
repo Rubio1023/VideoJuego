@@ -15,20 +15,20 @@ public class Espada implements Arma
     public void seleccionarAtaque() 
     {
         // Seleccionar el ataque
-        System.out.println("Selecciona un ataque con el arco:\n 1: Flecha Rápida\n 2: Flecha de Fuego \n 3: Flecha Oscura");
+        System.out.println("Selecciona un ataque con la espada :\n1: Filo Cortante \n2: Rebanador \n 3: Ataque del Berserker");
         int opcion = scanner.nextInt();
 
         // Llamar al método correspondiente según la opción seleccionada
         switch (opcion) 
         {
             case 1:
-                ataqueDeEspada.FiloCortante();  // Ejecutar disparo rápido
+                ataqueDeEspada.FiloCortante();  // Ejecutar Filo cortante
                 break;
             case 2:
-                ataqueDeEspada.Rebanador();  // Ejecutar disparo explosivo
+                ataqueDeEspada.Rebanador();  // Ejecutar Rebanador
                 break;
             case 3:
-                ataqueDeEspada.AtaqueDelBerserker();  // Ejecutar disparo oscuro
+                ataqueDeEspada.AtaqueDelBerserker();  // Ejecutar Ataque del Berserker
                 break;
             default:
                 System.out.println("Opción no válida.");
