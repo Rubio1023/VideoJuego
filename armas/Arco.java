@@ -1,67 +1,37 @@
+// Paquete armas
 package armas;
-import ataques.Ataque;
-import ataques.arco.FlechaRapida;
-import ataques.arco.FlechaDeFuego;
-import ataques.arco.FlechaOscura;
-import java.util.ArrayList;
-import java.util.List;
 
-public class Arco implements Armas
+import java.util.Scanner;
+import ataques.arco.AtaqueDeArco;  // Asegúrate de importar AtaqueDeArco
+
+// Clase Arco que implementa la interfaz Arma
+public class Arco implements Arma 
 {
-    private int MP;
-    private List<Ataque> ataques; // Lista de ataques del arco
-    
-    // Constructor
-    public Arco(int MPInicial) 
-    {
-        this.MP = MPInicial;
-        this.ataques = new ArrayList<>();
-        this.ataques.add(new FlechaRapida()); // Añadimos ataques específicos para el arco
-        this.ataques.add(new FlechaDeFuego());
-        this.ataques.add(new FlechaOscura());
-    }
-    
-    // Método para realizar un ataque
+    private AtaqueDeArco ataqueDeArco = new AtaqueDeArco();  // Crear una instancia de AtaqueDeArco
+    private Scanner scanner = new Scanner(System.in);  // Para leer la opción de ataque
+
     @Override
-    public int realizarAtaque(Ataque ataque) 
+    public void seleccionarAtaque() 
     {
-        int damage = ataque.calcularDamage();
-        System.out.println("Realizando ataque :" + ataque.getClass().getSimpleName() + " daño realizado :" + damage);
-        return damage;
-    }
-    
-    // Método para obtener los ataques
-    @Override
-    public List<Ataque> getAtaques() 
-    {
-        return ataques;  
-    }
-    
-    // Método para obtener la cantidad de MP
-    public int getMP() 
-    {
-        return MP;
-    }
-    
-    // Método para recargar MP
-    public void recargarMP(int cantidad) 
-    {
-        MP += cantidad;
-        System.out.println("MP recargados :" + cantidad + ". MP actual :" + MP);
-    }
-    
-    // Método para reducir MP
-    public int reducirMP(int cantidad) 
-    {
-        MP -= cantidad;
-        System.out.println("MP reducidos :" + cantidad + ". MP actual :" + MP);
-        return MP;
-    }
-    
-    // Método para defenderse
-    @Override
-    public void defender() 
-    {
-        System.out.println("Defensa activada.");
+        // Seleccionar el ataque
+        System.out.println("Selecciona un ataque con el arco:");
+        System.out.println("1: Disparo Rápido");
+        System.out.println("2: Disparo Explosivo");
+
+        int opcion = scanner.nextInt();
+
+        // Llamar al método correspondiente según la opción seleccionada
+        switch (opcion) 
+        {
+            case 1:
+                ataqueDeArco.disparoRapido();  // Ejecutar disparo rápido
+                break;
+            case 2:
+                ataqueDeArco.disparoExplosivo();  // Ejecutar disparo explosivo
+                break;
+            default:
+                System.out.println("Opción no válida.");
+                break;
+        }
     }
 }

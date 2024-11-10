@@ -1,16 +1,18 @@
 package personajes;
-import armas.Armas;
+
+import armas.Arma;
+
 // Clase abstracta Personajes con los atributos y métodos comunes a todos los personajes
 public abstract class Personajes 
 {
     private String nombre; // Nombre del personaje
     private int HP =100; // Puntos de vida
     private int MP =100; // Puntos de magia
-    protected Armas armas;  // Referencia al arma 
+    protected Arma armas; // Arma del personaje
     private boolean defendiendo; // Variable para saber si el personaje se está defendiendo
     
     // Constructor
-    public Personajes(String nombre, int HP, int MP, Armas armas) 
+    public Personajes(String nombre, int HP, int MP, Arma armas) 
     {
         this.nombre = nombre;
         this.HP = HP;
@@ -32,13 +34,17 @@ public abstract class Personajes
     {
         return this.MP;
     }
-    public Armas getArmas() 
+    public Arma getArma() 
     {
         return this.armas;
     }
-    
+    // Metodo para seleccionar el arma
+    public void seleccionarArma(armas.Arma arma) 
+    {
+        arma.seleccionarAtaque();  // Llama al método de selección del arma
+    }   
     // Metodos abstractos para atacar sin implementacion
-    public abstract void atacar(Personajes enemigo, int indiceAtaque);
+    public abstract void atacar(Personajes objetivo);
     
     // Metodo para defenderse con implementacion
     public void defender() 
