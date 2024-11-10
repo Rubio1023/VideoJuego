@@ -4,6 +4,7 @@ package armas;
 import java.util.Scanner;
 import ataques.Ataque;
 import ataques.AtaqueDeArco.FlechaRapida;
+import personajes.Personajes;
 import ataques.AtaqueDeArco.FlechaDeFuego;
 import ataques.AtaqueDeArco.FlechaOscura;
 
@@ -14,7 +15,7 @@ public class Arco implements Arma
     private Scanner scanner = new Scanner(System.in);  // Para leer la opción de ataque
 
     @Override
-    public void seleccionarAtaque() 
+    public void seleccionarAtaque(Personajes objetivo) 
     {
         // Seleccionar el ataque
         System.out.println("Selecciona un ataque con el bastón:\n 1: Hechizo Básico\n 2: Hechizo Elemental\n 3: Hechizo Arcano");
@@ -35,6 +36,14 @@ public class Arco implements Arma
             default:
                 System.out.println("Opción no válida.");
                 return; // Si no es válida, salir del método
+        }
+        ejecutarAtaque(objetivo); // Ejecutar el ataque seleccionado
+    }
+    // Método para ejecutar el ataque seleccionado
+    public void ejecutarAtaque(Personajes objetivo) 
+    {
+        if (ataque != null) {
+            ataque.ejecutarAtaque(objetivo);  // Aquí pasamos el objetivo al ataque
         }
     }
 }

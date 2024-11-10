@@ -5,6 +5,7 @@ import java.util.Scanner;
 import ataques.Ataque;
 import ataques.AtaqueDeCuchilla.AtaqueFurtivo;
 import ataques.AtaqueDeCuchilla.Envenenamiento;
+import personajes.Personajes;
 import ataques.AtaqueDeCuchilla.AtaqueSigiloso;
 
 // Clase Arco que implementa la interfaz Arma
@@ -14,7 +15,7 @@ public class Cuchilla implements Arma
     private Scanner scanner = new Scanner(System.in);  // Para leer la opción de ataque
 
     @Override
-    public void seleccionarAtaque() 
+    public void seleccionarAtaque(Personajes objetivo) 
     {
         // Seleccionar el ataque
         System.out.println("Selecciona un ataque con el bastón:\n 1: Hechizo Básico\n 2: Hechizo Elemental\n 3: Hechizo Arcano");
@@ -35,6 +36,15 @@ public class Cuchilla implements Arma
             default:
                 System.out.println("Opción no válida.");
                 return; // Si no es válida, salir del método
+        }
+        // Llamar al método para ejecutar el ataque
+        ejecutarAtaque(objetivo);
+    }
+
+    @Override
+    public void ejecutarAtaque(Personajes objetivo) {
+        if (ataque != null) {
+            ataque.ejecutarAtaque(objetivo);  // Aquí pasamos el objetivo al ataque
         }
     }
 }
