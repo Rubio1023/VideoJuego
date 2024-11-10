@@ -64,13 +64,18 @@ public abstract class Personajes
             {
                 this.HP = 0;
             }
-            System.out.println(nombre + " recibe " + damage + " daño recibido. HP restante :" + HP);
+            System.out.println(nombre + " recibe " + damage + " de daño recibido. HP restante :" + HP);
         } else {
             System.out.println(nombre + " se defendió y no recibe daño.");
             defendiendo = false;
         }    
     }
-    
+    // Metodo para mostrar HP y MP con implementacion del atacante
+    public void mostrarHPyMP() 
+    {
+        System.out.println(nombre + " tiene HP :" + HP + " y MP :" + MP);
+    }
+
     // Metodo de validacion, para verificar que este vivo con implementacion
     public boolean estaVivo() 
     {

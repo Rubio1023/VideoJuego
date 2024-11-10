@@ -5,6 +5,9 @@ import personajes.Asesino;
 import personajes.Berserker;
 import personajes.Personajes;
 import armas.Baston;
+import armas.Arco;
+import armas.Cuchilla;
+import armas.Espada;
 
 // Método principal que ejecuta el juego
 public class Main 
@@ -46,14 +49,15 @@ public class Main
             case 1:
                 return new Archimago(nombre, 100, 100, new Baston());
             case 2:
-                return new Arquero(nombre, opcion, opcion, null);
+                return new Arquero(nombre, 100, 100, new Arco());
             case 3:
-                return new Asesino(nombre, opcion, opcion, null);
+                return new Asesino(nombre, 100, 100, new Cuchilla());
             case 4:
-                return new Berserker(nombre, opcion, opcion, null);
+                return new Berserker(nombre, 100, 100, new Espada());
             default:
                 System.out.println("Opción inválida. Se seleccionará Archimago por defecto.");
-                return new Archimago(nombre, opcion, opcion, null);
+                return new Archimago(nombre, 100, 100, new Baston());
         }
     }
+
 }

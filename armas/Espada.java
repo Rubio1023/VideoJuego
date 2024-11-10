@@ -19,7 +19,7 @@ public class Espada implements Arma
     public void seleccionarAtaque(Personajes objetivo) 
     {
         // Seleccionar el ataque
-        System.out.println("Selecciona un ataque con el bastón:\n 1: Hechizo Básico\n 2: Hechizo Elemental\n 3: Hechizo Arcano");
+        System.out.println("Selecciona un ataque con la Espada Ensangretada:\n 1: Filo Cortante\n 2: Rebanador\n 3: Ataque Del Berserker");
         int opcion = scanner.nextInt();
 
         // Cambiar el ataque basado en la selección

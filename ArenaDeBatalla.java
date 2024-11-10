@@ -18,6 +18,7 @@ class ArenaDeBatalla
         {
             System.out.println("\nTurno de " + jugador1.getNombre());
             jugador1.atacar(jugador2);
+            jugador1.mostrarHPyMP();
 
             if (!jugador2.estaVivo()) 
             {
@@ -27,6 +28,7 @@ class ArenaDeBatalla
 
             System.out.println("\nTurno de " + jugador2.getNombre());
             jugador2.atacar(jugador1);
+            jugador2.mostrarHPyMP();
 
             if (!jugador1.estaVivo()) 
             {

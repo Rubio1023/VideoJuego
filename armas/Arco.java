@@ -18,7 +18,7 @@ public class Arco implements Arma
     public void seleccionarAtaque(Personajes objetivo) 
     {
         // Seleccionar el ataque
-        System.out.println("Selecciona un ataque con el bastón:\n 1: Hechizo Básico\n 2: Hechizo Elemental\n 3: Hechizo Arcano");
+        System.out.println("Selecciona un ataque con el Arco antiguo:\n 1: Flecha Rapida\n 2: Flecha De Fuego\n 3: Flecha ");
         int opcion = scanner.nextInt();
 
         // Cambiar el ataque basado en la selección
@@ -42,7 +42,8 @@ public class Arco implements Arma
     // Método para ejecutar el ataque seleccionado
     public void ejecutarAtaque(Personajes objetivo) 
     {
-        if (ataque != null) {
+        if (ataque != null) 
+        {
             ataque.ejecutarAtaque(objetivo);  // Aquí pasamos el objetivo al ataque
         }
     }
