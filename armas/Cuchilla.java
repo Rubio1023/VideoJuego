@@ -2,37 +2,39 @@
 package armas;
 
 import java.util.Scanner;
-
-import ataques.AtaqueDeCuchilla;
+import ataques.Ataque;
+import ataques.AtaqueDeCuchilla.AtaqueFurtivo;
+import ataques.AtaqueDeCuchilla.Envenenamiento;
+import ataques.AtaqueDeCuchilla.AtaqueSigiloso;
 
 // Clase Arco que implementa la interfaz Arma
 public class Cuchilla implements Arma 
 {
-    private AtaqueDeCuchilla ataqueDeCuchilla = new AtaqueDeCuchilla();  // Crear una instancia de AtaqueDeArco
+    private Ataque ataque; // Referencia a la interfaz Ataque
     private Scanner scanner = new Scanner(System.in);  // Para leer la opción de ataque
 
     @Override
     public void seleccionarAtaque() 
     {
         // Seleccionar el ataque
-        System.out.println("Selecciona un ataque con el cuchillo: \n 1: Ataque Furtivo \n 2: Ataque Sigiloso \n 3: Envenenamiento");
+        System.out.println("Selecciona un ataque con el bastón:\n 1: Hechizo Básico\n 2: Hechizo Elemental\n 3: Hechizo Arcano");
         int opcion = scanner.nextInt();
 
-        // Llamar al método correspondiente según la opción seleccionada
+        // Cambiar el ataque basado en la selección
         switch (opcion) 
         {
             case 1:
-                ataqueDeCuchilla.AtaqueFurtivo();  // Ejecutar Ataque furtivo
+                ataque = new AtaqueFurtivo();  // Cambiar a Hechizo Básico
                 break;
             case 2:
-                ataqueDeCuchilla.AtaqueSigiloso();  // Ejecutar Ataque sigiloso
+                ataque = new AtaqueSigiloso(); // Cambiar a Hechizo Elemental
                 break;
             case 3:
-                ataqueDeCuchilla.Envenenamiento();  // Ejecutar Envenenamiento
+                ataque = new Envenenamiento();  // Cambiar a Hechizo Arcano
                 break;
             default:
                 System.out.println("Opción no válida.");
-                break;
+                return; // Si no es válida, salir del método
         }
     }
 }

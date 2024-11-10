@@ -5,7 +5,6 @@ import java.util.Scanner;
 import ataques.AtaqueDeBaston.HechizoArcano;
 import ataques.AtaqueDeBaston.HechizoBasico;
 import ataques.AtaqueDeBaston.HechizoElemental;
-import personajes.Personajes;
 import ataques.Ataque;
 
 // Clase Arco que implementa la interfaz Arma

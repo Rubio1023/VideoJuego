@@ -3,14 +3,14 @@ package armas;
 
 import java.util.Scanner;
 import ataques.Ataque;
-import ataques.AtaqueDeBaston.HechizoArcano;
-import ataques.AtaqueDeBaston.HechizoBasico;
-import ataques.AtaqueDeBaston.HechizoElemental;
+import ataques.AtaqueDeArco.FlechaRapida;
+import ataques.AtaqueDeArco.FlechaDeFuego;
+import ataques.AtaqueDeArco.FlechaOscura;
 
 // Clase Arco que implementa la interfaz Arma
 public class Arco implements Arma 
 {
-       private Ataque ataque; // Referencia a la interfaz Ataque
+    private Ataque ataque; // Referencia a la interfaz Ataque
     private Scanner scanner = new Scanner(System.in);  // Para leer la opción de ataque
 
     @Override
@@ -24,13 +24,13 @@ public class Arco implements Arma
         switch (opcion) 
         {
             case 1:
-                ataque = new HechizoBasico();  // Cambiar a Hechizo Básico
+                ataque = new FlechaRapida();  // Cambiar a Hechizo Básico
                 break;
             case 2:
-                ataque = new HechizoElemental(); // Cambiar a Hechizo Elemental
+                ataque = new FlechaDeFuego(); // Cambiar a Hechizo Elemental
                 break;
             case 3:
-                ataque = new HechizoArcano();  // Cambiar a Hechizo Arcano
+                ataque = new FlechaOscura();  // Cambiar a Hechizo Arcano
                 break;
             default:
                 System.out.println("Opción no válida.");
