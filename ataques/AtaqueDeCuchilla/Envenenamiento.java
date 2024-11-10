@@ -24,7 +24,7 @@ public class Envenenamiento implements Ataque
             System.out.println("El objetivo ya está muerto, no se puede atacar.");
         }
         // Reduce los MP del personaje que ejecuta el hechizo
-        objetivo.reducirMP(costoMP);
+        atacante.reducirMP(costoMP);
         System.out.println("Ataque Envenenamiento realizo " + damage + " de daño, Costo de MP: " + costoMP);
     }    
 }

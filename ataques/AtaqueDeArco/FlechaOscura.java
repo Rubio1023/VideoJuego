@@ -23,7 +23,8 @@ public class FlechaOscura implements Ataque
         } else {
             System.out.println("El objetivo ya está muerto, no se puede atacar.");
         }
-
+        // Reduce los MP del personaje que ejecuta el hechizo
+        atacante.reducirMP(costoMP);
         System.out.println("Ataque Flecha Oscura realizo :" + damage + " de daño, Costo de MP :" + costoMP);
     } 
 }
