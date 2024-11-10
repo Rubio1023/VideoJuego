@@ -3,12 +3,12 @@ package armas;
 
 import java.util.Scanner;
 
-import ataques.AtaqueDeArco;
+import ataques.AtaqueDeBaston;
 
 // Clase Arco que implementa la interfaz Arma
 public class Baston implements Arma 
 {
-    private AtaqueDeArco ataqueDeArco = new AtaqueDeArco();  // Crear una instancia de AtaqueDeArco
+    private AtaqueDeBaston ataqueDeBaston = new AtaqueDeBaston();  // Crear una instancia de AtaqueDeArco
     private Scanner scanner = new Scanner(System.in);  // Para leer la opción de ataque
 
     @Override
@@ -22,13 +22,13 @@ public class Baston implements Arma
         switch (opcion) 
         {
             case 1:
-                ataqueDeArco.FlachaRapida();;  // Ejecutar disparo rápido
+                ataqueDeBaston.HechizoBasico();  // Ejecutar disparo rápido
                 break;
             case 2:
-                ataqueDeArco.FlachaDeFuego();;  // Ejecutar disparo explosivo
+                ataqueDeBaston.HechizoElemental(); // Ejecutar disparo explosivo
                 break;
             case 3:
-                ataqueDeArco.FlachaOscura();;  // Ejecutar disparo oscuro
+                ataqueDeBaston.HechizoArcano();  // Ejecutar disparo oscuro
                 break;
             default:
                 System.out.println("Opción no válida.");

@@ -3,12 +3,12 @@ package armas;
 
 import java.util.Scanner;
 
-import ataques.AtaqueDeArco;
+import ataques.AtaqueDeEspada;
 
 // Clase Arco que implementa la interfaz Arma
 public class Espada implements Arma 
 {
-    private AtaqueDeArco ataqueDeArco = new AtaqueDeArco();  // Crear una instancia de AtaqueDeArco
+    private AtaqueDeEspada ataqueDeEspada = new AtaqueDeEspada();  // Crear una instancia de AtaqueDeArco
     private Scanner scanner = new Scanner(System.in);  // Para leer la opción de ataque
 
     @Override
@@ -22,13 +22,13 @@ public class Espada implements Arma
         switch (opcion) 
         {
             case 1:
-                ataqueDeArco.FlachaRapida();;  // Ejecutar disparo rápido
+                ataqueDeEspada.FiloCortante();  // Ejecutar disparo rápido
                 break;
             case 2:
-                ataqueDeArco.FlachaDeFuego();;  // Ejecutar disparo explosivo
+                ataqueDeEspada.Rebanador();  // Ejecutar disparo explosivo
                 break;
             case 3:
-                ataqueDeArco.FlachaOscura();;  // Ejecutar disparo oscuro
+                ataqueDeEspada.AtaqueDelBerserker();  // Ejecutar disparo oscuro
                 break;
             default:
                 System.out.println("Opción no válida.");

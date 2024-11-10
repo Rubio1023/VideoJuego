@@ -22,13 +22,13 @@ public class Arco implements Arma
         switch (opcion) 
         {
             case 1:
-                ataqueDeArco.FlachaRapida();;  // Ejecutar disparo rápido
+                ataqueDeArco.FlachaRapida();  // Ejecutar disparo rápido
                 break;
             case 2:
-                ataqueDeArco.FlachaDeFuego();;  // Ejecutar disparo explosivo
+                ataqueDeArco.FlachaDeFuego();  // Ejecutar disparo explosivo
                 break;
             case 3:
-                ataqueDeArco.FlachaOscura();;  // Ejecutar disparo oscuro
+                ataqueDeArco.FlachaOscura();  // Ejecutar disparo oscuro
                 break;
             default:
                 System.out.println("Opción no válida.");
