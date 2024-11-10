@@ -1,61 +1,38 @@
+// Paquete armas
 package armas;
 
-import ataques.Ataque;
-import ataques.baston.HechizoBasico;
-import ataques.baston.HechizoElemental;
-import ataques.baston.HechizoArcano;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Scanner;
 
-public class Baston implements Armas 
+import ataques.AtaqueDeArco;
+
+// Clase Arco que implementa la interfaz Arma
+public class Baston implements Arma 
 {
-    private int MP;
-    private List<Ataque> ataques; // Lista de ataques del bastón
-
-    public Baston(int MPInicial) 
-    {
-        this.MP = MPInicial;
-        this.ataques = new ArrayList<>();
-        this.ataques.add(new HechizoBasico());  // Añadimos ataques específicos para el bastón
-        this.ataques.add(new HechizoElemental());
-        this.ataques.add(new HechizoArcano());
-    }
+    private AtaqueDeArco ataqueDeArco = new AtaqueDeArco();  // Crear una instancia de AtaqueDeArco
+    private Scanner scanner = new Scanner(System.in);  // Para leer la opción de ataque
 
     @Override
-    public int realizarAtaque(Ataque ataque) 
+    public void seleccionarAtaque() 
     {
-        int damage = ataque.calcularDamage();
-        System.out.println("Realizando ataque :" + ataque.getClass().getSimpleName() + " daño realizado :" + damage);
-        return damage;
+        // Seleccionar el ataque
+        System.out.println("Selecciona un ataque con el arco:\n 1: Flecha Rápida\n 2: Flecha de Fuego \n 3: Flecha Oscura");
+        int opcion = scanner.nextInt();
+
+        // Llamar al método correspondiente según la opción seleccionada
+        switch (opcion) 
+        {
+            case 1:
+                ataqueDeArco.FlachaRapida();;  // Ejecutar disparo rápido
+                break;
+            case 2:
+                ataqueDeArco.FlachaDeFuego();;  // Ejecutar disparo explosivo
+                break;
+            case 3:
+                ataqueDeArco.FlachaOscura();;  // Ejecutar disparo oscuro
+                break;
+            default:
+                System.out.println("Opción no válida.");
+                break;
+        }
     }
-    // Metodo para obtener los ataques disponibles
-    @Override
-    public List<Ataque> getAtaques() 
-    {
-        return ataques;  
-    }
-    // Metodo para obtener la cantidad de MP
-    public int getMP() 
-    {
-        return MP;
-    }
-     // Método para recargar MP
-     public void recargarMP(int cantidad) 
-     {
-         MP += cantidad;
-         System.out.println("MP recargados :" + cantidad + ". MP actual :" + MP);
-     }
-     // Método para reducir MP
-     public int reducirMP(int cantidad) 
-     {
-         MP -= cantidad;
-         System.out.println("MP reducidos :" + cantidad + ". MP actual :" + MP);
-         return MP;
-     }
-     // Método para defenderse
-     @Override
-     public void defender() 
-     {
-         System.out.println("Defensa activada.");
-     }
 }
