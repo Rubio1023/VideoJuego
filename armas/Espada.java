@@ -22,12 +22,12 @@ public class Espada implements Arma
         while (!ataqueValido) 
         {
             // Información de los ataques disponibles
-            System.out.println("Los ataques tienen un rango de daño y conste de mana elige sabiamente\n"
+            System.out.println("\nLos ataques tienen un rango de daño y conste de mana elige sabiamente\n"
             +"El filo cortante tiene un rango de daño de 15 a 30 y un costo de mana de 40\n"
             +"El rebanador tiene un rango de daño de 15 a 50 y un costo de mana de 60\n"
             +"El ataque del bererker tiene un rango de daño de 25 a 80 y un costo de mana de 90");
             // Solicitar al jugador que seleccione un ataque
-            System.out.println("Selecciona un ataque con la espada ensangretada:\n 1: Filo Cortante\n 2: Rebanador\n 3: Ataque del Berserker\n");
+            System.out.println("\nSelecciona un ataque con la espada ensangretada:\n 1: Filo Cortante\n 2: Rebanador\n 3: Ataque del Berserker\n");
             System.out.print("Ingresar opcion :");
             int opcion = scanner.nextInt();
             // Seleccionar el ataque

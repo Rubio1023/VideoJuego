@@ -35,25 +35,26 @@ public class Main
 
     public static Personajes seleccionarClase(String nombre, Scanner dato) 
     {
-        System.out.println("\n"+"Jugador " + nombre + " porfavor selecione el personaje que desea :\n1 Archimago\n2 Arquero\n3 Asesino\n4 Berserker");
-
-
-        int opcion = dato.nextInt();
-        dato.nextLine();
-
-        switch (opcion) 
+        while(true) 
         {
-            case 1:
-                return new Archimago(nombre, 100, 100, new Baston());
-            case 2:
-                return new Arquero(nombre, 100, 100, new Arco());
-            case 3:
-                return new Asesino(nombre, 100, 100, new Cuchilla());
-            case 4:
-                return new Berserker(nombre, 100, 100, new Espada());
-            default:
-                System.out.println("Opción inválida. Se seleccionará Archimago por defecto.");
-                return new Archimago(nombre, 100, 100, new Baston());
+            System.out.println("\n"+"Jugador " + nombre + " porfavor selecione el personaje que desea \n1 Archimago\n2 Arquero\n3 Asesino\n4 Berserker");
+            System.out.print("Ingresar opcion :");
+            int opcion = dato.nextInt();
+            dato.nextLine();// Limpiar el buffer
+
+            switch (opcion) 
+            {
+                case 1:
+                    return new Archimago(nombre, 100, 100, new Baston());
+                case 2:
+                    return new Arquero(nombre, 100, 100, new Arco());
+                case 3:
+                    return new Asesino(nombre, 100, 100, new Cuchilla());
+                case 4:
+                    return new Berserker(nombre, 100, 100, new Espada());
+                default:
+                    System.out.println("Opción inválida. Vuelva a intentarlo.");
+            }
         }
     }
 

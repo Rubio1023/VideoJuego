@@ -16,7 +16,7 @@ class ArenaDeBatalla
     {
         while (jugador1.estaVivo() && jugador2.estaVivo()) 
         {
-            System.out.println("\nTurno de " + jugador1.getNombre());
+            System.out.println("\nTurno de " + jugador1.getNombre()+"\n");
             jugador1.atacar(jugador1, jugador2);
             jugador1.mostrarHPyMP();
 
@@ -26,7 +26,7 @@ class ArenaDeBatalla
                 break;
             }
 
-            System.out.println("\nTurno de " + jugador2.getNombre());
+            System.out.println("\nTurno de " + jugador2.getNombre()+"\n");
             jugador2.atacar(jugador2, jugador1);
             jugador2.mostrarHPyMP();
 

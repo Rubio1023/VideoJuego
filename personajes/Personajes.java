@@ -54,7 +54,7 @@ public abstract class Personajes
         if (cantidad <= MP) 
         {
             MP -= cantidad;
-            System.out.println(nombre + " ha gastado :" + cantidad + " MP. MP restante :" + MP);
+            System.out.println(nombre + " el ataque a consumido :" + cantidad + " puntos de mana. mana restante de :" + MP);
         } else {
             System.out.println(nombre + " no tiene suficiente MP.");
         }

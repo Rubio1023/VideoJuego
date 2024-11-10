@@ -24,6 +24,6 @@ public class HechizoArcano implements Ataque
         }
         // Reduce los MP del personaje que ejecuta el hechizo
         atacante.reducirMP(costoMP);
-        System.out.println("Ataque Hechizo Arcano realizo " + damage + " de daño a "+ objetivo.getNombre() +" Costo de MP :" + costoMP);
+        System.out.println("\n"+"Resumen del ataque\n"+"Ataque Hechizo Arcano realizo " + damage + " de daño a "+ objetivo.getNombre() +" y le costo :" + costoMP+" puntos de mana a "+ atacante.getNombre());
     }
 }
