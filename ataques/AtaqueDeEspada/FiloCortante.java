@@ -13,7 +13,7 @@ public class FiloCortante implements Ataque
     @Override
     public void ejecutarAtaque(Personajes atacante,Personajes objetivo) 
     {
-        damage = rand.nextInt(26)+15; // Daño de 15 a 40 
+        damage = rand.nextInt(16)+15; // Daño de 15 a 30 
         costoMP = 40; // Costo de MP de la flecha rápida
 
         // Si el objetivo está defendiendo, el daño se reduce

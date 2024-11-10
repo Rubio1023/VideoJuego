@@ -21,8 +21,14 @@ public class Cuchilla implements Arma
         // Bucle para solicitar la selección de ataque en caso de que no sea válida
         while (!ataqueValido) 
         {
+            // Información de los ataques disponibles
+            System.out.println("Los ataques tienen un rango de daño y conste de mana elige sabiamente\n"
+            +"El ataque furtivo tiene un rango de daño de 10 a 20 y un costo de mana de 15\n"
+            +"El ataque sigiloso tiene un rango de daño de 25 a 30 y un costo de mana de 25\n"
+            +"El envenenamiento tiene un rango de daño de 10 a 80 y un costo de mana de 85");
             // Solicitar al jugador que seleccione un ataque
-            System.out.println("Selecciona un ataque con el bastón:\n 1: Hechizo Básico\n 2: Hechizo Elemental\n 3: Hechizo Arcano");
+            System.out.println("Selecciona un ataque con la cuchilla del asesino:\n 1: Ataque Furtivo\n 2: Ataque Sigiloso\n 3: Envenenamiento");
+            System.out.print("Ingresar opcion :");
             int opcion = scanner.nextInt();
             // Seleccionar el ataque
             switch (opcion) 

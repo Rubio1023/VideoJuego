@@ -35,11 +35,8 @@ public class Main
 
     public static Personajes seleccionarClase(String nombre, Scanner dato) 
     {
-        System.out.println("Selecciona la clase de " + nombre + ":");
-        System.out.println("1. Archimago");
-        System.out.println("2. Arquero");
-        System.out.println("3. Aseino");
-        System.out.println("4. Berserker");
+        System.out.println("\n"+"Jugador " + nombre + " porfavor selecione el personaje que desea :\n1 Archimago\n2 Arquero\n3 Asesino\n4 Berserker");
+
 
         int opcion = dato.nextInt();
         dato.nextLine();

@@ -21,8 +21,14 @@ public class Baston implements Arma
         // Bucle para solicitar la selección de ataque en caso de que no sea válida
         while (!ataqueValido) 
         {
+            // Información de los ataques disponibles
+            System.out.println("Los ataques tienen un rango de daño y conste de mana elige sabiamente\n"
+            +"El hechizo básico tiene un rango de daño de 10 a 25 y un costo de mana de 20\n"
+            +"El hechizo elemental tiene un rango de daño de 30 a 50 y un costo de mana de 50\n"
+            +"El hechizo arcano tiene un rango de daño de 60 a 80 y un costo de mana de 80");
             // Solicitar al jugador que seleccione un ataque
-            System.out.println("Selecciona un ataque con el bastón:\n 1: Hechizo Básico\n 2: Hechizo Elemental\n 3: Hechizo Arcano");
+            System.out.println("Opciones de ataque con el Bastón Antiguo:\n 1: Hechizo Básico\n 2: Hechizo Elemental\n 3: Hechizo Arcano");
+            System.out.print("Ingresar opcion :");
             int opcion = scanner.nextInt();
             // Seleccionar el ataque
             switch (opcion) 

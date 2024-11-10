@@ -20,8 +20,14 @@ public class Arco implements Arma
         // Bucle para solicitar la selección de ataque en caso de que no sea válida
         while (!ataqueValido) 
         {
+            // Información de los ataques disponibles
+            System.out.println("Los ataques tienen un rango de daño y conste de mana elige sabiamente\n"
+            +"La felcha rapida tiene un rango de daño de 5 a 10 y un costo de mana de 15\n"
+            +"La flehca de fuego tiene un rango de daño de 10 a 20 y un costo de mana de 25\n"
+            +"La flecha oscura tiene un rango de daño de 30 a 60 y un costo de mana de 40");
             // Solicitar al jugador que seleccione un ataque
-            System.out.println("Selecciona un ataque con el bastón:\n 1: Hechizo Básico\n 2: Hechizo Elemental\n 3: Hechizo Arcano");
+            System.out.println("Selecciona un ataque con el arco milenario:\n 1: Flecha Rapida\n 2: Flecha De Fuego\n 3: Flecha Oscura");
+            System.out.print("Ingresar opcion :");
             int opcion = scanner.nextInt();
             // Seleccionar el ataque
             switch (opcion) 
