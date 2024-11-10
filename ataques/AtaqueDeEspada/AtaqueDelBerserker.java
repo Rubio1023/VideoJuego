@@ -25,6 +25,6 @@ public class AtaqueDelBerserker implements Ataque
         }
         // Reduce los MP del personaje que ejecuta el hechizo
         atacante.reducirMP(costoMP);
-        System.out.println("Ataque Del Berserker realizo " + damage + " de daño a "+ objetivo.getNombre() +" Costo de MP: " + costoMP);
+        System.out.println("Ataque Del Berserker realizo " + damage + " de daño a "+ objetivo.getNombre() +" Costo de MP :" + costoMP);
     }     
 }

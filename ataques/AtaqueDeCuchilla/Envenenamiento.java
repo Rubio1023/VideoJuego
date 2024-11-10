@@ -25,6 +25,6 @@ public class Envenenamiento implements Ataque
         }
         // Reduce los MP del personaje que ejecuta el hechizo
         atacante.reducirMP(costoMP);
-        System.out.println("Ataque Envenenamiento realizo " + damage + " de daño, Costo de MP: " + costoMP);
+        System.out.println("Ataque Envenenamiento realizo " + damage + " de daño a "+ objetivo.getNombre() +" Costo de MP :" + costoMP);
     }    
 }
