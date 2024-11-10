@@ -18,7 +18,7 @@ public class Arco implements Arma
     public void seleccionarAtaque(Personajes objetivo) 
     {
         // Seleccionar el ataque
-        System.out.println("Selecciona un ataque con el Arco antiguo:\n 1: Flecha Rapida\n 2: Flecha De Fuego\n 3: Flecha ");
+        System.out.println("Selecciona un ataque con el Arco antiguo:\n 1: Flecha Rapida\n 2: Flecha De Fuego\n 3: Flecha Oscura");
         int opcion = scanner.nextInt();
 
         // Cambiar el ataque basado en la selección

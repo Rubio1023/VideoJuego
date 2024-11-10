@@ -1,5 +1,6 @@
 package ataques;
 import personajes.Personajes;
+
 // Interfaz Ataque
 public interface Ataque
 {

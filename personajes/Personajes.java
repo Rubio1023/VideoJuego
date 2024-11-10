@@ -48,10 +48,16 @@ public abstract class Personajes
         System.out.println(nombre + " se prepara para defender.");
     }
     
-    // Metodo para redicir MP con implementacion
+    // Método para reducir los puntos de mana
     public void reducirMP(int cantidad) 
     {
-        this.MP -= cantidad;
+        if (cantidad <= MP) 
+        {
+            MP -= cantidad;
+            System.out.println(nombre + " ha gastado :" + cantidad + " MP. MP restante :" + MP);
+        } else {
+            System.out.println(nombre + " no tiene suficiente MP.");
+        }
     }
     
     // Metodo para recibir daño con implementacion

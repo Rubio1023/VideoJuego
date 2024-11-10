@@ -25,5 +25,5 @@ public class FlechaOscura implements Ataque
         }
 
         System.out.println("Ataque Flecha Oscura realizo :" + damage + " de daño, Costo de MP :" + costoMP);
-    }    
+    } 
 }
