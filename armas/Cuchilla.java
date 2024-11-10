@@ -3,39 +3,46 @@ package armas;
 
 import java.util.Scanner;
 import ataques.Ataque;
-import ataques.AtaqueDeCuchilla.AtaqueFurtivo;
-import ataques.AtaqueDeCuchilla.Envenenamiento;
 import personajes.Personajes;
+import ataques.AtaqueDeCuchilla.AtaqueFurtivo;
 import ataques.AtaqueDeCuchilla.AtaqueSigiloso;
+import ataques.AtaqueDeCuchilla.Envenenamiento;
 
 // Clase Arco que implementa la interfaz Arma
 public class Cuchilla implements Arma 
 {
     private Ataque ataque; // Referencia a la interfaz Ataque
     private Scanner scanner = new Scanner(System.in);  // Para leer la opción de ataque
+    private boolean ataqueValido = false;  // Para validar la opción de ataque
 
     @Override
     public void seleccionarAtaque(Personajes atacante,Personajes objetivo) 
     {
-        // Seleccionar el ataque
-        System.out.println("Selecciona un ataque con la Cuchilla:\n 1: Ataque Furtivo\n 2: Ataque Sigiloso\n 3: Envenenamiento");
-        int opcion = scanner.nextInt();
-
-        // Cambiar el ataque basado en la selección
-        switch (opcion) 
+        // Bucle para solicitar la selección de ataque en caso de que no sea válida
+        while (!ataqueValido) 
         {
-            case 1:
-                ataque = new AtaqueFurtivo();  // Cambiar a Hechizo Básico
-                break;
-            case 2:
-                ataque = new AtaqueSigiloso(); // Cambiar a Hechizo Elemental
-                break;
-            case 3:
-                ataque = new Envenenamiento();  // Cambiar a Hechizo Arcano
-                break;
-            default:
-                System.out.println("Opción no válida.");
-                return; // Si no es válida, salir del método
+            // Solicitar al jugador que seleccione un ataque
+            System.out.println("Selecciona un ataque con el bastón:\n 1: Hechizo Básico\n 2: Hechizo Elemental\n 3: Hechizo Arcano");
+            int opcion = scanner.nextInt();
+            // Seleccionar el ataque
+            switch (opcion) 
+            {
+                case 1:
+                    ataque = new AtaqueFurtivo();
+                    ataqueValido = true;
+                    break;
+                case 2:
+                    ataque = new AtaqueSigiloso();
+                    ataqueValido = true;
+                    break;
+                case 3:
+                    ataque = new Envenenamiento();
+                    ataqueValido = true;
+                    break;
+                default:
+                    System.out.println("Opción no válida. Por favor, selecciona una de las opciones que hay para realizar el ataque.");
+                    // No se sale del bucle y se solicita nuevamente la selección de ataque.
+            }
         }
         // Llamar al método para ejecutar el ataque
         ejecutarAtaque(atacante,objetivo);

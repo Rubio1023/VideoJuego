@@ -3,8 +3,8 @@ package armas;
 
 import java.util.Scanner;
 import ataques.Ataque;
-import ataques.AtaqueDeArco.FlechaRapida;
 import personajes.Personajes;
+import ataques.AtaqueDeArco.FlechaRapida;
 import ataques.AtaqueDeArco.FlechaDeFuego;
 import ataques.AtaqueDeArco.FlechaOscura;
 
@@ -13,30 +13,37 @@ public class Arco implements Arma
 {
     private Ataque ataque; // Referencia a la interfaz Ataque
     private Scanner scanner = new Scanner(System.in);  // Para leer la opción de ataque
-
+    private boolean ataqueValido = false;  // Para validar la opción de ataque
     @Override
     public void seleccionarAtaque(Personajes atacante,Personajes objetivo) 
     {
-        // Seleccionar el ataque
-        System.out.println("Selecciona un ataque con el Arco antiguo:\n 1: Flecha Rapida\n 2: Flecha De Fuego\n 3: Flecha Oscura");
-        int opcion = scanner.nextInt();
-
-        // Cambiar el ataque basado en la selección
-        switch (opcion) 
+        // Bucle para solicitar la selección de ataque en caso de que no sea válida
+        while (!ataqueValido) 
         {
-            case 1:
-                ataque = new FlechaRapida();  // Cambiar a Hechizo Básico
-                break;
-            case 2:
-                ataque = new FlechaDeFuego(); // Cambiar a Hechizo Elemental
-                break;
-            case 3:
-                ataque = new FlechaOscura();  // Cambiar a Hechizo Arcano
-                break;
-            default:
-                System.out.println("Opción no válida.");
-                return; // Si no es válida, salir del método
+            // Solicitar al jugador que seleccione un ataque
+            System.out.println("Selecciona un ataque con el bastón:\n 1: Hechizo Básico\n 2: Hechizo Elemental\n 3: Hechizo Arcano");
+            int opcion = scanner.nextInt();
+            // Seleccionar el ataque
+            switch (opcion) 
+            {
+                case 1:
+                    ataque = new FlechaRapida();
+                    ataqueValido = true;
+                    break;
+                case 2:
+                    ataque = new FlechaDeFuego();
+                    ataqueValido = true;
+                    break;
+                case 3:
+                    ataque = new FlechaOscura();
+                    ataqueValido = true;
+                    break;
+                default:
+                    System.out.println("Opción no válida. Por favor, selecciona una de las opciones que hay para realizar el ataque.");
+                    // No se sale del bucle y se solicita nuevamente la selección de ataque.
+            }
         }
+        // Llamar al método para ejecutar el ataque
         ejecutarAtaque(atacante,objetivo); // Ejecutar el ataque seleccionado
     }
     // Método para ejecutar el ataque seleccionado
