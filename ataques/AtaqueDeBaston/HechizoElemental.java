@@ -10,7 +10,7 @@ public class HechizoElemental implements Ataque
     private Random rand = new Random();
 
     @Override
-    public void ejecutarAtaque(Personajes objetivo) 
+    public void ejecutarAtaque(Personajes atacante,Personajes objetivo) 
     {
         damage = rand.nextInt(21) + 30; // Daño de 30 a 50
         costoMP = 50;  // Costo de MP

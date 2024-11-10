@@ -11,9 +11,9 @@ public class Asesino extends Personajes
     }
     // Método para atacar
     @Override
-    public void atacar(Personajes objetivo) 
+    public void atacar(Personajes atacante,Personajes objetivo) 
     {
         System.out.println("El Asesino se esta preparando en las sombras para atacar son su arma.");
-        armas.seleccionarAtaque(objetivo);// Llamar al método de selección de ataque de la clase Arma
+        armas.seleccionarAtaque(atacante,objetivo);// Llamar al método de selección de ataque de la clase Arma
     }
 }

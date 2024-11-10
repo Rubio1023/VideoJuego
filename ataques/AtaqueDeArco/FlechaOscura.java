@@ -11,7 +11,7 @@ public class FlechaOscura implements Ataque
     private Random rand = new Random();
 
     @Override
-    public void ejecutarAtaque(Personajes objetivo) 
+    public void ejecutarAtaque(Personajes atacante,Personajes objetivo) 
     {
         damage =rand.nextInt(31)+30; // Daño de 30 a 60 
         costoMP = 40; // Costo de MP de la flecha rápida

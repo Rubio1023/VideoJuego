@@ -11,7 +11,7 @@ public class FlechaDeFuego implements Ataque
     private Random rand = new Random();
 
     @Override
-    public void ejecutarAtaque(Personajes objetivo) 
+    public void ejecutarAtaque(Personajes atacante,Personajes objetivo) 
     {
         damage = rand.nextInt(11)+10; // Daño de 10 a 20 
         costoMP = 25; // Costo de MP de la flecha rápida

@@ -15,7 +15,7 @@ public class Cuchilla implements Arma
     private Scanner scanner = new Scanner(System.in);  // Para leer la opción de ataque
 
     @Override
-    public void seleccionarAtaque(Personajes objetivo) 
+    public void seleccionarAtaque(Personajes atacante,Personajes objetivo) 
     {
         // Seleccionar el ataque
         System.out.println("Selecciona un ataque con la Cuchilla:\n 1: Ataque Furtivo\n 2: Ataque Sigiloso\n 3: Envenenamiento");
@@ -38,13 +38,15 @@ public class Cuchilla implements Arma
                 return; // Si no es válida, salir del método
         }
         // Llamar al método para ejecutar el ataque
-        ejecutarAtaque(objetivo);
+        ejecutarAtaque(atacante,objetivo);
     }
 
     @Override
-    public void ejecutarAtaque(Personajes objetivo) {
-        if (ataque != null) {
-            ataque.ejecutarAtaque(objetivo);  // Aquí pasamos el objetivo al ataque
+    public void ejecutarAtaque(Personajes atacante,Personajes objetivo) 
+    {
+        if (ataque != null) 
+        {
+            ataque.ejecutarAtaque(atacante,objetivo);  // Aquí pasamos el objetivo al ataque
         }
     }
 }

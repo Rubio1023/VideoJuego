@@ -10,7 +10,7 @@ public class HechizoArcano implements Ataque
     private Random rand = new Random();
 
     @Override
-    public void ejecutarAtaque(Personajes objetivo) 
+    public void ejecutarAtaque(Personajes atacante,Personajes objetivo) 
     {
         damage = rand.nextInt(21) + 60;  // Daño de 60 a 80
         costoMP = 80;  // Costo de MP

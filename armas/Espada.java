@@ -16,7 +16,7 @@ public class Espada implements Arma
     private Scanner scanner = new Scanner(System.in);  // Para leer la opción de ataque
 
     @Override
-    public void seleccionarAtaque(Personajes objetivo) 
+    public void seleccionarAtaque(Personajes atacante,Personajes objetivo) 
     {
         // Seleccionar el ataque
         System.out.println("Selecciona un ataque con la Espada Ensangretada:\n 1: Filo Cortante\n 2: Rebanador\n 3: Ataque Del Berserker");
@@ -39,15 +39,15 @@ public class Espada implements Arma
                 return; // Si no es válida, salir del método
         }
     // Llamar al método para ejecutar el ataque
-        ejecutarAtaque(objetivo);
+        ejecutarAtaque(atacante,objetivo);
     }
 
     @Override
-    public void ejecutarAtaque(Personajes objetivo) 
+    public void ejecutarAtaque(Personajes atacante,Personajes objetivo) 
     {
         if (ataque != null) 
         {
-            ataque.ejecutarAtaque(objetivo);  // Aquí pasamos el objetivo al ataque
+            ataque.ejecutarAtaque(atacante,objetivo);  // Aquí pasamos el objetivo al ataque
         }
     }
 }

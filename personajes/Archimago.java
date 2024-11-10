@@ -11,9 +11,9 @@ public class Archimago extends Personajes
     }
     // Método para atacar
     @Override
-    public void atacar(Personajes objetivo) 
+    public void atacar(Personajes atacante,Personajes objetivo) 
     {
         System.out.println("El Archimago se esta preparando con su baston antiguo.");
-        armas.seleccionarAtaque(objetivo);// Llamar al método de selección de ataque de la clase Arma
+        armas.seleccionarAtaque(atacante,objetivo);// Llamar al método de selección de ataque de la clase Arma
     }
 }

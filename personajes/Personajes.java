@@ -39,7 +39,7 @@ public abstract class Personajes
         return this.armas;
     }
     // Metodos abstractos para atacar sin implementacion
-    public abstract void atacar(Personajes objetivo);
+    public abstract void atacar(Personajes atacante,Personajes objetivo);
     
     // Metodo para defenderse con implementacion
     public void defender() 

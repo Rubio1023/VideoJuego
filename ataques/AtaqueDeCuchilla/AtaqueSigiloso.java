@@ -11,7 +11,7 @@ public class AtaqueSigiloso implements Ataque
     private Random rand = new Random();
 
     @Override
-    public void ejecutarAtaque(Personajes objetivo) 
+    public void ejecutarAtaque(Personajes atacante,Personajes objetivo) 
     {
         damage = rand.nextInt(6)+25; // Daño de 25 a 30 
         costoMP = 25; // Costo de MP de la flecha rápida

@@ -10,7 +10,7 @@ public class HechizoBasico implements Ataque
     private Random rand = new Random();
 
     @Override
-    public void ejecutarAtaque(Personajes objetivo) 
+    public void ejecutarAtaque(Personajes atacante,Personajes objetivo) 
     {
         damage = rand.nextInt(16) + 10; // Daño de 10 a 25
         costoMP = 20;  // Costo de MP

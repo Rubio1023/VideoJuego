@@ -11,7 +11,7 @@ public class AtaqueDelBerserker implements Ataque
     private Random rand = new Random();
 
     @Override
-    public void ejecutarAtaque(Personajes objetivo) 
+    public void ejecutarAtaque(Personajes atacante,Personajes objetivo) 
     {
         damage = rand.nextInt(56)+25; // Daño de 25 80 
         costoMP = 90; // Costo de MP de la flecha rápida

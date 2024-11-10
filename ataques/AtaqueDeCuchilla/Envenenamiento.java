@@ -11,7 +11,7 @@ public class Envenenamiento implements Ataque
     private Random rand = new Random();
 
     @Override
-    public void ejecutarAtaque(Personajes objetivo) 
+    public void ejecutarAtaque(Personajes atacante,Personajes objetivo) 
     {
         damage = rand.nextInt(71)+10; // Daño de 10 a 80 
         costoMP = 85; // Costo de MP de la flecha rápida

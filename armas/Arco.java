@@ -15,7 +15,7 @@ public class Arco implements Arma
     private Scanner scanner = new Scanner(System.in);  // Para leer la opción de ataque
 
     @Override
-    public void seleccionarAtaque(Personajes objetivo) 
+    public void seleccionarAtaque(Personajes atacante,Personajes objetivo) 
     {
         // Seleccionar el ataque
         System.out.println("Selecciona un ataque con el Arco antiguo:\n 1: Flecha Rapida\n 2: Flecha De Fuego\n 3: Flecha Oscura");
@@ -37,14 +37,14 @@ public class Arco implements Arma
                 System.out.println("Opción no válida.");
                 return; // Si no es válida, salir del método
         }
-        ejecutarAtaque(objetivo); // Ejecutar el ataque seleccionado
+        ejecutarAtaque(atacante,objetivo); // Ejecutar el ataque seleccionado
     }
     // Método para ejecutar el ataque seleccionado
-    public void ejecutarAtaque(Personajes objetivo) 
+    public void ejecutarAtaque(Personajes atacante,Personajes objetivo) 
     {
         if (ataque != null) 
         {
-            ataque.ejecutarAtaque(objetivo);  // Aquí pasamos el objetivo al ataque
+            ataque.ejecutarAtaque(atacante,objetivo);  // Aquí pasamos el objetivo al ataque
         }
     }
 }

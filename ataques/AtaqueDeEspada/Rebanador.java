@@ -11,7 +11,7 @@ public class Rebanador implements Ataque
     private Random rand = new Random();
 
     @Override
-    public void ejecutarAtaque(Personajes objetivo) 
+    public void ejecutarAtaque(Personajes atacante,Personajes objetivo) 
     {
         damage = rand.nextInt(36)+15; // Daño de 15 a 50 
         costoMP = 60; // Costo de MP de la flecha rápida
