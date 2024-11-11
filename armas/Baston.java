@@ -12,8 +12,7 @@ import ataques.AtaqueDeBaston.HechizoElemental;
 public class Baston implements Arma 
 {
     private Ataque ataque; // Referencia a la interfaz Ataque
-    private Scanner scanner = new Scanner(System.in);  // Para leer la opción de ataque
-   
+    private Scanner dato = new Scanner(System.in);  // Para leer la opción de ataque
 
     @Override
     public void seleccionarAtaque(Personajes atacante,Personajes objetivo) 
@@ -31,7 +30,7 @@ public class Baston implements Arma
             // Solicitar al jugador que seleccione un ataque
             System.out.println("\n"+"Opciones de ataque con el Bastón Antiguo\n 1: Hechizo Básico\n 2: Hechizo Elemental\n 3: Hechizo Arcano\n 4: Recargar Mana\n");
             System.out.print("Ingresar opcion :");
-            int opcion = scanner.nextInt();
+            int opcion = dato.nextInt();
             // Seleccionar el ataque
             switch (opcion) {
                 case 1:
