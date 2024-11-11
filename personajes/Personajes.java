@@ -76,6 +76,9 @@ public abstract class Personajes
             defendiendo = false;
         }    
     }
+    public boolean tieneSuficienteMP(int costoMP) {
+        return this.MP >= costoMP;
+    }
     // Metodo para mostrar HP y MP con implementacion del atacante
     public void mostrarHPyMP() 
     {
@@ -86,5 +89,13 @@ public abstract class Personajes
     public boolean estaVivo() 
     {
         return HP > 0;
+    }
+    // Método para regenerar mana
+    public void recargarMP(int cantidad) {
+        this.MP += cantidad;
+        System.out.println(nombre + " ha regenerado " + cantidad + " puntos de mana. MP actual: " + MP);
+    }
+    public boolean manaBajo() {
+        return this.MP < 30; // Umbral para considerar que el mana es bajo
     }
 }
