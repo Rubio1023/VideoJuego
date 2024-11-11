@@ -51,6 +51,7 @@ public abstract class Personajes
     // Método para reducir los puntos de mana
     public void reducirMP(int cantidad) 
     {
+        // Si la cantidad de mana a reducir es menor o igual a los puntos de mana actuales, se resta la cantidad
         if (cantidad <= MP) 
         {
             MP -= cantidad;
@@ -63,6 +64,7 @@ public abstract class Personajes
     // Metodo para recibir daño con implementacion
     public void recibirDamage(int damage) 
     {
+        // Si el personaje no se está defendiendo, recibe el daño normalmente
         if (!defendiendo) 
         {
             this.HP -= damage;
@@ -76,7 +78,9 @@ public abstract class Personajes
             defendiendo = false;
         }    
     }
-    public boolean tieneSuficienteMP(int costoMP) {
+    // Metodo para verificar si tiene suficiente MP 
+    public boolean tieneSuficienteMP(int costoMP) 
+    {
         return this.MP >= costoMP;
     }
     // Metodo para mostrar HP y MP con implementacion del atacante
@@ -84,18 +88,20 @@ public abstract class Personajes
     {
         System.out.println(nombre + " tiene vida restante :" + HP + " y puntos de mana :" + MP);
     }
-
     // Metodo de validacion, para verificar que este vivo con implementacion
     public boolean estaVivo() 
     {
         return HP > 0;
     }
     // Método para regenerar mana
-    public void recargarMP(int cantidad) {
+    public void recargarMP(int cantidad) 
+    {
         this.MP += cantidad;
         System.out.println(nombre + " ha regenerado " + cantidad + " puntos de mana. MP actual: " + MP);
     }
-    public boolean manaBajo() {
+    // Método para verificar si el mana es bajo
+    public boolean manaBajo() 
+    {
         return this.MP < 30; // Umbral para considerar que el mana es bajo
     }
 }

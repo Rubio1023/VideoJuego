@@ -32,9 +32,10 @@ public class Main
         // Iniciar la pelea
         juego.iniciarPelea();
     }
-
+    // Método para seleccionar la clase del personaje
     public static Personajes seleccionarClase(String nombre, Scanner dato) 
     {
+        // Bucle infinito para solicitar la clase del personaje en caso de que no se haya seleccionado una opción válida
         while(true) 
         {
             System.out.println("\n"+"Jugador " + nombre + " porfavor selecione el personaje que desea \n1 Archimago\n2 Arquero\n3 Asesino\n4 Berserker");
